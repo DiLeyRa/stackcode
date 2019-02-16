@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-body">
+    <form #userForm ="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <input type="hidden" name="$key" #$key="ngModel" [(ngModel)] = "userService.selectedUser.$key">
+      
+      <div class="form-group">
+        <input type="text" class="form-control"
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="userService.selectedUser.name"
+        placeholder="Name">
+      </div>
+
+      <div class="form-group">
+          <input type="number" class="form-control"
+          name="phone"
+          #phone="ngModel"
+          [(ngModel)]="userService.selectedUser.phone"
+          placeholder="Number Phone">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control"
+            name="email"
+            #name="ngModel"
+            [(ngModel)]="userService.selectedUser.email"
+            placeholder="email">
+          </div>
+
+          <div class="form-group">
+              <input type="date" class="form-control"
+              name="date"
+              #name="ngModel"
+              [(ngModel)]="userService.selectedUser.date"
+              placeholder="Date">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">
+                <i class="fa fa-plus-circle"></i>
+              </button>
+              <button class="btn btn-secondary reset" type="reset" (click)="resetForm(userForm)">
+                <i class="fa fa-sync-alt"></i>
+              </button>
+            </div>
+    </form>
+  </div>
+</div>
